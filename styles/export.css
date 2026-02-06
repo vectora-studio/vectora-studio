@@ -1,0 +1,160 @@
+/* EXPORT PANEL */
+.export{
+    position:absolute;
+    right:10px;
+    top:50px;
+    width:260px;
+    background:#000;
+    border:1px solid #222;
+    border-radius:6px;
+    padding:8px;
+    font-family:system-ui, sans-serif;
+    color:#ccc;
+    display:none;
+    flex-direction:column;
+    gap:8px;
+    z-index: 1005;
+}
+
+/* ROW BASE */
+.export .render{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+/* EXPORT PATH */
+.export #export-path{
+    flex:1;
+    height:26px;
+    background:#000;
+    border:1px solid #333;
+    border-radius:3px;
+    color:#aaa;
+    font-size:12px;
+    padding:0 6px;
+    outline:none;
+}
+
+/* PATH BUTTON */
+.export-path-select{
+    width:26px;
+    height:26px;
+    background:#000;
+    border:1px solid #333;
+    border-radius:3px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.export-path-select:hover{
+    border-color:#ff1133;
+}
+
+.export-path-select img{
+    width:14px;
+    height:14px;
+}
+
+/* TOTAL FRAMES */
+.export #export-frames{
+    width:100%;
+    height:26px;
+    background:#000;
+    border:1px solid #333;
+    border-radius:3px;
+    color:#fff;
+    font-size:12px;
+    text-align:center;
+    outline:none;
+}
+
+/* QUALITY */
+.export .quality{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+}
+
+.export .fileSize{
+    height:26px;
+    border:1px solid #333;
+    border-radius:3px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    cursor:pointer;
+    user-select:none;
+}
+
+.export .fileSize:hover{
+    border-color:#ff1133;
+}
+
+/* RENDER BUTTON */
+.export .render-btn{
+    margin-top:4px;
+}
+
+.export .render-frames{
+    width:100%;
+    height:28px;
+    background:#ff1133;
+    border:none;
+    border-radius:4px;
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.export .render-frames:hover{
+    opacity:.9;
+}
+
+
+.selected-size{
+    border: 1px solid #ff1133 !important;
+}
+
+
+.render-progress{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center perfectly */
+  width: 600px;
+  height: 50px;
+  font-family: Arial, sans-serif;
+  z-index: 9999; /* front layer */
+  background-color: #222;
+  padding: 0px 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.progress-text{
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.progress-bar{
+  width: 100%;
+  height: 10px;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill{
+  width: 0%;
+  height: 100%;
+  background: #ff1133;
+  transition: width 0.3s ease;
+}

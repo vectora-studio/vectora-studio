@@ -1,0 +1,80 @@
+.canvasSection{
+    width: calc(100vw - 280px);
+    height: 100%;
+    border-right: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.canvas{
+    border: 1px solid #222;
+}
+
+.zoom{
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 12px;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    color: #ccc;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    z-index: 1001;
+}
+
+/* Label */
+.zoom .label{
+    color: #888;
+    font-weight: 500;
+}
+
+/* Range slider */
+.zoom input[type="range"]{
+    width: 120px;
+    height: 4px;
+    appearance: none;
+    background: #2a2a2a;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Chrome / Edge thumb */
+.zoom input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #4da3ff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(77,163,255,0.2);
+}
+
+/* Firefox thumb */
+.zoom input[type="range"]::-moz-range-thumb{
+    width: 14px;
+    height: 14px;
+    background: #4da3ff;
+    border-radius: 50%;
+    border: none;
+}
+
+/* Value */
+.zoom .value{
+    min-width: 45px;
+    text-align: right;
+    color: #fff;
+    font-weight: 500;
+}

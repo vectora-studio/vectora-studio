@@ -1,0 +1,150 @@
+.properties{
+    width:230px;
+    height:100%;
+    background:#000;
+    padding:10px;
+    font-family:system-ui;
+    color:#bbb;
+}
+
+.property-group{
+    margin-bottom:14px;
+}
+
+.propertiesLabel{
+    font-size:11px;
+    letter-spacing:.5px;
+    color:#888;
+    margin-bottom:6px;
+    display:block;
+    text-transform:uppercase;
+}
+
+/* Fill Section */
+.fill-boxes{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:6px;
+}
+
+.fill-box{
+    height:28px;
+    border-radius:4px;
+    border:1px solid #333;
+    cursor:pointer;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    user-select:none;
+}
+
+.fill-box:hover{
+    outline:2px solid #3a3a3a;
+}
+
+/* Color input styling */
+.color-input{
+    padding:0;
+    border:none;
+    background:none;
+    height:28px;
+}
+.color-input::-webkit-color-swatch{
+    border-radius:4px;
+    border:1px solid #333;
+}
+
+/* Brush size slider */
+#brush-size {
+    width: 100%;
+    margin-top: 4px;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: #444;
+    outline: none;
+    cursor: pointer;
+}
+
+#brush-size::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff1133;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+#brush-size::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff1133;
+    border: 2px solid #fff;
+}
+
+.canvas-boxes{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:6px;
+}
+
+
+.canvas-box{
+    height:28px;
+    border-radius:4px;
+    border:1px solid #333;
+    cursor:pointer;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    user-select:none;
+}
+
+.canvas-box:hover{
+    outline:2px solid #3a3a3a;
+}
+
+/* Color input styling */
+.canvas-input{
+    padding:0;
+    border:none;
+    background:none;
+    height:28px;
+}
+.canvas-input::-webkit-color-swatch{
+    border-radius:4px;
+    border:1px solid #333;
+}
+
+
+
+
+
+
+
+.clear-canvas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: #e32551;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+.clear-canvas:hover{
+    background-color: #e32571;
+}
+.clear-canvas:active{
+    scale: 0.99;
+}
+

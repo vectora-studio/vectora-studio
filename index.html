@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Nex OS Studio</title>
+  <!-- Globel Style Sheet -->
+  <link rel="stylesheet" href="./styles/globle.css">
+  <!-- Header Style Sheet -->
+  <link rel="stylesheet" href="./styles/header.css">
+  <!-- Export style sheet -->
+  <link rel="stylesheet" href="./styles/export.css">
+  <!-- Tools Style Sheet -->
+  <link rel="stylesheet" href="./styles/tools.css">
+  <!-- Canvas Style Sheet -->
+  <link rel="stylesheet" href="./styles/canvas.css">
+  <!-- Properties Style Sheet -->
+  <link rel="stylesheet" href="./styles/properties.css">
+  <!-- Timeline Style Sheet -->
+  <link rel="stylesheet" href="./styles/timeline.css">
+
+
+</head>
+
+<body>
+
+  <!-- CUSTOM FILE MENU -->
+  <header class="file-menu">
+    
+
+    <div class="menu">
+      <img src="./src/brand/logo.png">
+      <p class="projectPath">Vectora Studio</p>
+    </div>
+
+
+    <div class="menu-btns">
+      <button class="showRender">Export</button>
+      <div id="minimize" class="customBtn">
+        <img style="width: 20px;height: 20px; margin-top: -12px;" src="./src/icons/min.png">
+      </div>
+      <div id="maximize" class="customBtn">
+        <img style="width: 15px;height: 15px;" src="./src/icons/rect.png">
+      </div>
+      <div id="closeApp" class="customBtn">
+        <img style="width: 20px;height: 20px;" src="./src/icons/close.png">
+      </div>
+      
+     
+    </div>
+  </header>
+
+  <!-- EXPORT SECTION -->
+  <section class="export">
+    <div class="location render">
+      <input id="export-path" class="export-path-select" type="text" readonly>
+      <button class="export-path-select"><img src="./src/icons/folder.png"></button>
+    </div>
+    <div class="total-export render">
+      <input id="export-frames" readonly value="150" type="number">
+    </div>
+    <!-- <div class="quality render">
+      <div class="fileSize">360P</div>
+      <div class="fileSize">720P</div>
+      <div class="fileSize">1080P</div>
+    </div> -->
+    <div class="render-btn">
+      <button id="renderStart" class="render-frames">Render</button>
+    </div>
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <div class="render-progress">
+    <div class="progress-text">0 / 0</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+
+
+
+ 
+
+
+ 
+
+  <!-- MAIN AREA -->
+  <section style="width: 100vw; height: calc(100vh - 240px); background-color: #000; display: flex;">
+
+    <!-- TOOLS SECTION -->
+    <div class="tools">
+      <button class="tool" id="select"><img src="./src/icons/select.png"></button>
+      <button class="tool" id="brush"><img src="./src/icons/brush.png"></button>
+      <button class="tool" id="eraser"><img src="./src/icons/eraser.png"></button>
+      <button class="tool" id="line"><img src="./src/icons/line.png"></button>
+      <button class="tool" id="rect"><img src="./src/icons/rect.png"></button>
+      <button class="tool" id="circle"><img src="./src/icons/circle.png"></button>
+    </div>
+
+
+    <!-- CANVAS SECTION -->
+    <div class="canvasSection">
+      <canvas id="canvas" class="canvas"></canvas>
+      <!-- <div class="zoom">
+        <span class="label">Zoom</span>
+        <input class="zoomValue" type="range" step="10" min="10" max="1000" value="320">
+        <span class="value"></span>
+      </div> -->
+
+    </div>
+
+
+
+    <!-- PROPERTIES -->
+    <section class="properties">
+
+      <div class="property-group">
+        <span class="propertiesLabel">Brush</span>
+        <!-- Brush size slider -->
+        <input type="range" id="brush-size" min="1" max="50" value="3">
+        <span id="brush-size-value">3</span>
+      </div>
+
+      <div class="property-group">
+        <span class="propertiesLabel">Fill</span>
+
+        <div class="fill-boxes">
+          <!-- Color Picker -->
+          <input type="color" id="color-input" class="fill-box color-input" value="#ff0000">
+
+          <!-- Preset Colors -->
+          <div class="fill-box" style="background:#000;color:#000">#000</div>
+          <div class="fill-box" style="background:#444;color:#444">#444</div>
+          <div class="fill-box" style="background:#666;color:#666">#666</div>
+          <div class="fill-box" style="background:#888;color:#888">#888</div>
+          <div class="fill-box" style="background:#aaa;color:#aaa">#aaa</div>
+
+          <div class="fill-box" style="background:#ff3b3b;color:#ff3b3b">red</div>
+          <div class="fill-box" style="background:#ff9800;color:#ff9800">orange</div>
+          <div class="fill-box" style="background:#ffc107;color:#ffc107">yellow</div>
+          <div class="fill-box" style="background:#4caf50;color:#4caf50">green</div>
+          <div class="fill-box" style="background:#00bcd4;color:#00bcd4">cyan</div>
+
+          <div class="fill-box" style="background:#2196f3;color:#2196f3">blue</div>
+          <div class="fill-box" style="background:#3f51b5;color:#3f51b5">indigo</div>
+          <div class="fill-box" style="background:#673ab7;color:#673ab7">violet</div>
+          <div class="fill-box" style="background:#e91e63;color:#e91e63">pink</div>
+          <div class="fill-box" style="background:#795548;color:#795548">brown</div>
+
+          <div class="fill-box" style="background:#607d8b;color:#607d8b">slate</div>
+          <div class="fill-box" style="background:#ffffff;color:#ffffff">white</div>
+          <div class="fill-box" style="background:#111;color:#111">dark</div>
+          <div class="fill-box" style="background:#1e1e1e;color:#1e1e1e">editor</div>
+        </div>
+      </div>
+
+      <div class="property-group">
+        <span class="propertiesLabel">Canvas Style</span>
+
+        <div class="canvas-boxes">
+          <!-- Color Picker -->
+          <input type="color" id="canvas-input" class="canvas-box canvas-input" value="#111111">
+
+          <!-- Preset Colors -->
+          <div class="canvas-box" style="background:#ff3b3b;color:#ff3b3b">#ff3b3b</div>
+          <div class="canvas-box" style="background:#ff9800;color:#ff9800">#ff9800</div>
+          <div class="canvas-box" style="background:#ffc107;color:#ffc107">#ffc107</div>
+          <div class="canvas-box" style="background:#4caf50;color:#4caf50">#4caf50</div>
+
+          <div class="canvas-box" style="background:#f05858;color:#f05858">#f05858</div>
+          <div class="canvas-box" style="background:#a6ff00;color:#a6ff00">#a6ff00</div>
+          <div class="canvas-box" style="background:#ff8307;color:#ff8307">#ff8307</div>
+
+          <div class="canvas-box" style="background:#3bd4c0;color:#3bd4c0">#3bd4c0</div>
+          <div class="canvas-box" style="background:#485bda;color:#485bda">#485bda</div>
+          <div class="canvas-box" style="background:#b83bd4;color:#b83bd4">#b83bd4</div>
+          <div class="canvas-box" style="background:#da4879;color:#da4879">#da4879</div>
+
+
+        </div>
+
+        
+
+        <button onclick="clearCanvas()" class="clear-canvas">
+          <img src="./src/icons/eraser.png" />
+          Clear Canvas
+        </button>
+      </div>
+
+
+    </section>
+
+  </section>
+
+
+
+
+  <!-- TIMELINE SECTION-->
+  <section class="timeline-section">
+
+    <!-- FILES -->
+    <div class="files">
+      <p class="timeline-title">LIBRARY</p>
+      <button id="add-image" class="add-image"><img src="./src/icons/add1.png"> ADD IMAGE</button>
+
+      <div class="assets-list">
+
+
+      </div>
+
+
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="timeline">
+      <!-- TIMELINE HEADER -->
+      <div class="timeline-head">
+        <button onclick="addFrame()" class="timeline-btns frames-btn"><img src="./src/icons/add1.png"> Add
+          Keyframe</button>
+
+        <button id="delete-frame" class="timeline-btns"><img src="./src/icons/delete.png"></button>
+        <button id="prev-frame" class="timeline-btns"><img src="./src/icons/prev.png"></button>
+        <button id="play-btn" onclick="play()" class="timeline-btns"><img src="./src/icons/play.png"></button>
+        <button id="stop-btn" onclick="stop()" class="timeline-btns"><img src="./src/icons/stop.png"></button>
+        <button id="next-frame" class="timeline-btns"><img src="./src/icons/next.png"></button>
+        <button id="auto-frame" class="timeline-btns"><img src="./src/icons/auto.png"></button>
+
+
+        <div class="timeline-playback-frame">
+          <input type="number" class="play-frame current" id="current-frame" value="0" min="0">
+          <span class="frame-separator">/</span>
+          <input type="number" class="play-frame current" id="total-frame" value="150" min="1">
+
+          <select id="fps">
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="60">60</option>
+          </select>
+        </div>
+
+
+
+      </div>
+
+      <!-- TIMELINE MAIN SECTION -->
+      <div class="timeline-main-section">
+
+        <!-- CONTROLER -->
+        <!-- <div class="ctrl">
+          <div class="ctrlHead"></div>
+          <div class="ctrlTail"></div>
+         </div> -->
+
+        <!-- TIMELINE MAIN -->
+        <div class="timeline-main">
+          <div class="frames">
+
+          </div>
+
+          <div class="tracks">
+            <div class="track">
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+  <!-- JS FILES -->
+
+  <!-- RENDERER FILE -->
+  <script src="./renderer.js"></script>
+
+
+  <!-- HEADER FILE  -->
+  <script src="./scripts/header.js"></script>
+
+  <!-- TOOLS FILE -->
+  <script src="./scripts/tools.js"></script>
+
+  <!-- CANVAS FILE -->
+  <script src="./scripts/canvas.js"></script>
+
+</body>
+
+</html>

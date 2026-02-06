@@ -1,0 +1,87 @@
+.file-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+    padding: 0 20px;
+    -webkit-app-region: drag;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    -webkit-app-region: no-drag;
+}
+
+.menu-i{
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-app-region: no-drag;
+}
+
+.menu-i:hover{
+    color: #eaeaea;
+}
+
+.menu img{
+    width: 30px;
+    border-radius: 50%;
+    -webkit-app-region: no-drag;
+}
+
+.projectPath{
+    font-size: 14px;
+    -webkit-app-region: no-drag;
+}
+
+
+
+
+
+
+
+
+.menu-btns{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    -webkit-app-region: no-drag;
+}
+
+.menu-btns button{
+    height: 30px;
+    width: 100px;
+    border: none;
+    background-color: #ff1133;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+    -webkit-app-region: no-drag;
+}
+
+.menu-btns button:hover{
+    background-color: #ff183b;
+}
+
+.menu-btns .customBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+
+
+.menu-btns .customBtn:hover{
+    background-color: #222;
+}

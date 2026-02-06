@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build / Dist
+dist/
+build/
+out/
+
+# Electron
+*.log
+*.pid
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Cache
+.cache/
+.npm/
+.yarn/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated frames / exports
+frames/
+exports/
+render/
